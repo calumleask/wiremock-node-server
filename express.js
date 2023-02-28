@@ -32,11 +32,10 @@ const use = (path, uriBase) => {
   });
 };
 
-use('/api/*', 'http://localhost:8081');
-use('*', 'http://localhost:8082');
+use('*', 'http://localhost:8081');
 
 app.listen(port, function () {
-  console.log('Express at port', port);
+  console.log('Express Server at port', port);
 });
 
 process.on('uncaughtException', err => {});

@@ -2,14 +2,13 @@
   "name": "wiremock-node-server",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "express.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write .",
     "serve-wiremock": "wiremock --root-dir ./wiremock --port 8081",
-    "serve-frontend": "node run-frontend.js",
-    "serve-express": "node express-example.js",
-    "serve": "concurrently 'npm run serve-wiremock' 'npm run serve-frontend' 'npm run serve-express'",
+    "serve-express": "node express.js",
+    "serve": "concurrently 'npm run serve-wiremock' 'npm run serve-express'",
     "start": "npm run serve"
   },
   "author": "",

@@ -1,13 +1,18 @@
 {
-  "request": {
-    "method": "GET",
-    "url": "/api/example"
-  },
-  "response": {
-    "status": 200,
-    "body": "This is an api response",
-    "headers": {
-      "Content-Type": "text/plain"
+  "mappings": [
+    {
+      "name": "Example",
+      "request": {
+        "method": "GET",
+        "url": "/api/example"
+      },
+      "response": {
+        "status": 200,
+        "body": "This is an api response",
+        "headers": {
+          "Content-Type": "text/plain"
+        }
+      }
     }
-  }
+  ]
 }
