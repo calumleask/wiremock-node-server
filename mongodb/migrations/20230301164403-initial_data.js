@@ -1,4 +1,4 @@
-const { mappings } = require('./data/example.json');
+const { mappings } = require('./data/mappings.json');
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = {
