@@ -1,14 +1,17 @@
 const request = require('request');
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 const port = 8080;
 
+app.use(cors());
+
 // https://stackoverflow.com/questions/10435407/proxy-with-express-js
 const use = (path, uriBase) => {
   app.use(path, (req, res, next) => {
-    var method, r;
-    method = req.method.toLowerCase().replace(/delete/, 'del');
+    let r;
+    const method = req.method.toLowerCase().replace(/delete/, 'del');
     switch (method) {
       case 'get':
       case 'post':
