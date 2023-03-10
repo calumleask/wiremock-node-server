@@ -6,18 +6,30 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write .",
-    "serve-wiremock": "wiremock --root-dir ./wiremock --port 8081",
-    "serve-express": "node express.js",
-    "serve": "concurrently 'npm run serve-wiremock' 'npm run serve-express'",
+    "wiremock:db-import": "node scripts/wiremock-import-mappings-from-db.js",
+    "wiremock:json-export": "node scripts/wiremock-export-mappings-to-json.js",
+    "wiremock:serve": "wiremock --root-dir ./wiremock --port 8081",
+    "express:serve": "node express.js",
+    "db:json-export": "node scripts/db-export-mappings-to-json.js",
+    "db:serve": "mkdir -p mongodb/db && cd mongodb && mongod --dbpath=./db",
+    "db:migrate": "cd mongodb && migrate-mongo up",
+    "serve": "concurrently 'npm run wiremock:serve' 'npm run express:serve'",
     "start": "npm run serve"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.6.0",
+    "prettier": "^2.8.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "prettier": "^2.8.4",
+    "migrate-mongo": "^9.0.0",
+    "mongodb": "^5.1.0",
+    "node-fetch": "^2.6.9",
     "request": "^2.88.2",
+    "uuid": "^9.0.0",
     "wiremock": "^2.35.0"
   }
 }
