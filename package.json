@@ -19,15 +19,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^7.6.0",
-    "prettier": "^2.8.4"
+    "concurrently": "^8.0.1",
+    "prettier": "^2.8.7"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "migrate-mongo": "^9.0.0",
     "mongodb": "^5.1.0",
-    "node-fetch": "^2.6.9",
+    "node-fetch": "^3.3.1",
     "request": "^2.88.2",
     "uuid": "^9.0.0",
     "wiremock": "^2.35.0"

@@ -1,4 +1,5 @@
-const fetch = require('node-fetch');
+const fetch = (url, init) =>
+  import('node-fetch').then(({ default: fetch }) => fetch(url, init));
 const fs = require('fs/promises');
 
 const host = 'localhost';

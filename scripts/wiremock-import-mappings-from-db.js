@@ -1,5 +1,6 @@
 const { MongoClient } = require('mongodb');
-const fetch = require('node-fetch');
+const fetch = (url, init) =>
+  import('node-fetch').then(({ default: fetch }) => fetch(url, init));
 
 // Connection URL
 const url = 'mongodb://localhost:27017';
